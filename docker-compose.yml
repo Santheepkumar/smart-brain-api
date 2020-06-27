@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  smart-brain-docker-api:
+    container_name: backend
+    # image: node:8.11.1
+    build: ./
+    command: npm start
+    working_dir: /home/santheepkumar/Documents/Study/docker-practice/smart-brain-docker-api
+    env_file: .env
+    environment:
+      - PORT=$PORT
+      - KEY=$KEY
+    ports:
+      - "3000:3000"
